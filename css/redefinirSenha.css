@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (min-width: 270px) {
+    /* REDEFINIR SENHA */
+
+    #form-redefinir {
+        width: 75%;
+        margin-top: 0%;
+    }
+
+    #redefinir-senha {
+        background-image: url(../img/background_login.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .container-redefinir {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-redefinir h3 {
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #49B9ED;
+    }
+
+    .container-redefinir a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 3.5vw;
+    }
+
+    .container-redefinir u {
+        color: #49B9ED;
+        font-size: 3.5vw;
+    }
+
+    .container-redefinir #submit {
+        width: 100%;
+        padding: 8px;
+        border-radius: 10px;
+        font-size: 5vw;
+        background-color: #05619D;
+        border: 2px solid #49B9ED;
+        margin-top: 30px;
+    }
+
+    .redefinir-info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .redefinir-info:nth-child(2) {
+        margin-top: 20px;
+    }
+
+    .redefinir-info:nth-child(3) {
+        margin-top: 15px;
+    }
+
+    .redefinir-info label {
+        font-weight: bold;
+        font-size: 5vw;
+        margin-bottom: 10px;
+    }
+
+    .redefinir-info input {
+        width: 100%;
+        padding: 10px 8px;
+        border-radius: 10px;
+        font-size: 4vw;
+        background-color: rgba(185, 230, 251, 0.3);
+        color: #ffffff;
+        border: 3px solid transparent;
+        transition: border-color 0.3s;
+    }
+
+    .redefinir-info input::placeholder {
+        color: #ffffff;
+        opacity: 1;
+    }
+
+    .redefinir-info input:focus {
+        outline: none;
+        border: 3px solid #49B9ED;
+    }
+
+    .redefinir-info a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 8px;
+        border-radius: 10px;
+        font-size: 5vw;
+        background-color: #05619D;
+        border: 2px solid #49B9ED;
+        margin-top: 30px;
+    }
+
+    /* Estilos para os popups de notificação */
+    .notification-popup {
+        position: fixed;
+        top: 20px;
+        right: -300px;
+        width: 300px;
+        padding: 15px;
+        background-color: #ff4f4f;
+        /* Cor para erro */
+        color: white;
+        font-size: 1rem;
+        border-radius: 5px;
+        transition: right 0.5s ease;
+    }
+
+    .notification-popup.success {
+        background-color: #4CAF50;
+        /* Cor para sucesso */
+    }
+
+    .notification-popup.show {
+        right: 20px;
+        /* Popup aparece na tela */
+    }
+
+    .notification-popup.hidden {
+        right: -300px;
+        /* Oculta o popup */
+    }
+
+    /* Barra de contagem regressiva */
+    .countdown-bar {
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        margin-top: 10px;
+        animation: countdown 3s linear;
+    }
+
+    /* Animação de contagem regressiva da barra */
+    @keyframes countdown {
+        from {
+            width: 100%;
+        }
+
+        to {
+            width: 0;
+        }
+    }
+
+    /* Estilo do loader e do spinner */
+    .loader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #49B9ED;
+        font-size: 18px;
+        font-weight: bold;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .loader.show {
+        opacity: 1;
+    }
+
+    .loader.hidden {
+        display: none;
+    }
+
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #49B9ED;
+        /* Cor da borda externa */
+        border-top: 4px solid #fff;
+        /* Cor da borda superior */
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 10px;
+        /* Espaço entre o spinner e o texto */
+    }
+
+    /* Animação de rotação */
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}

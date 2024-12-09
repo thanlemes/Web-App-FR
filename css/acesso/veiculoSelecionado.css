@@ -1,0 +1,544 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #E0E0E0;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (min-width: 270px) {
+    #veiculoSelecionado {
+        background-color: #2A2F34;
+    }
+
+    .nav-info {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        border-bottom: 2px solid #B9E6FB;
+    }
+
+    .nav-icone {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 10vh;
+    }
+
+    .nav-icone img {
+        width: 60px;
+        height: auto;
+    }
+
+    .nav-dados {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        height: 10vh;
+        padding: 10px;
+    }
+
+    .nav-dados h2 {
+        font-size: 14px;
+    }
+
+    .nav-dados p {
+        font-size: 12px;
+        color: #AAAAAA;
+    }
+
+    .nav-dados span {
+        color: #1C91D0;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 10vh;
+    }
+
+    #menu-icon {
+        font-size: 26px;
+        cursor: pointer;
+        padding: 0 10px;
+        right: 10px;
+        top: 10px;
+    }
+
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        z-index: 1;
+        display: none;
+    }
+
+    #side-menu {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        background-color: #2A2F34;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+    }
+
+    #side-menu.visible {
+        transform: translateX(0);
+    }
+
+    #overlay.visible {
+        display: block;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+    }
+
+    ul a {
+        text-decoration: none;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 20px 15px;
+        cursor: pointer;
+        font-size: 16px;
+        border-bottom: 1px solid #1C91D0;
+    }
+
+    li img {
+        width: 15px;
+        height: 15px;
+    }
+
+    li:hover {
+        background-color: #1C91D0;
+    }
+
+    .nav-veiculo-selecionado-box{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    .seta-voltar {
+        /* position: fixed; */
+        /* margin-top: -40px; */
+        padding: 40px;
+    }
+
+    .seta-voltar img {
+        width: 15px;
+        height: auto;
+    }
+
+    .nav-veiculo-selecionado {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 40px;
+        animation: driveIn 1s ease-out forwards;
+        /* Adiciona a animação */
+    }
+
+    .nav-veiculo-selecionado img {
+        width: 140px;
+        height: auto;
+        z-index: -1;
+    }
+
+    @keyframes driveIn {
+        from {
+            transform: translateX(-200%);
+            /* Inicia fora da tela à esquerda */
+        }
+
+        to {
+            transform: translateX(0);
+            /* Finaliza na posição original */
+        }
+    }
+
+    .container-dados-veiculos {
+        padding: 0 10%;
+        width: 100%;
+    }
+    
+    .dados-veiculos-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .dados-veiculos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 10px;
+        margin-top: 10px;
+        width: 50%;
+        border-top: 2px solid #E0E0E0;
+        border-bottom: 2px solid #E0E0E0;
+    }
+
+    .dados-veiculos-box .dados-veiculos:first-child {
+        border-right: 2px solid #E0E0E0;
+    }
+
+    .dados-veiculos h1 {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .dados-veiculos p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .dados-veiculos-box-detalhe {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+    
+    .dados-veiculos-detalhe {
+        display: flex;
+        text-align: center;
+        width: 33%;
+        flex-direction: column;
+    }
+    
+    .dados-veiculos-detalhe h2 {
+        font-size: 16px;
+        font-weight: 500;
+        padding-top: 10px;
+        border-right: 2px solid #E0E0E0;
+    }
+    
+    .dados-veiculos-detalhe p {
+        font-size: 14px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .dados-veiculos-detalhe span {
+        border-right: 2px solid #E0E0E0;
+        width: 100%;
+        height: 20px;
+    }
+
+    .dados-veiculos,
+    .dados-veiculos-detalhe {
+        opacity: 0;
+        /* Inicia invisível */
+        transform: translateY(20px);
+        /* Move para baixo */
+        animation: fadeIn 0.5s forwards;
+        /* Aplica a animação */
+    }
+
+    .dados-partida {
+        margin-top: 15px;
+    }
+
+    .dados-partida form {
+        border: 2px solid #81CBEE;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+    .dados-partida form h3{
+        font-size: 16px;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .input-wrapper {
+        opacity: 0;
+        /* Inicia invisível */
+        transform: translateY(20px);
+        /* Move para baixo */
+        animation: fadeIn 1.2s forwards;
+        /* Aplica a animação */
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            /* Torna visível */
+            transform: translateY(0);
+            /* Retorna à posição original */
+        }
+    }
+
+    .input-container {
+        width: 100%;
+        padding: 0px 15px;
+    }
+
+    .input-wrapper {
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+    button {
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #1C91D0;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+        background-color: #05619D;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        min-width: 91%;
+        padding: 10px;
+        border: 2px solid #81CBEE;
+        border-radius: 5px;
+        font-size: 20px;
+        outline: none;
+        background-color: #2A2F34;
+        box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+    }
+
+    label {
+        position: absolute;
+        left: 11px;
+        top: -9px;
+        transition: 0.2s ease all;
+        font-size: 16px;
+        color: #81CBEE;
+        background-color: #2A2F34;
+    }
+
+    input:focus+label,
+    input:not(:placeholder-shown)+label {
+        top: -9px;
+        left: 11px;
+        font-size: 16px;
+        color: #81CBEE;
+        background-color: #2A2F34;
+        padding: 0px 5px;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="time"]::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        filter: invert(67%) sepia(94%) saturate(248%) hue-rotate(169deg) brightness(98%) contrast(91%);
+    }
+
+    #destino {
+        width: 100%;
+        resize: none;
+        /* Impede o redimensionamento manual */
+        overflow: hidden;
+        /* Oculta a barra de rolagem */
+    }
+
+    #modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Estilos para os popups de notificação */
+    .notification-popup {
+        position: fixed;
+        top: 20px;
+        right: -300px;
+        width: 300px;
+        padding: 15px;
+        background-color: #ff4f4f;
+        /* Cor para erro */
+        color: white;
+        font-size: 1rem;
+        border-radius: 5px;
+        transition: right 0.5s ease;
+        z-index: 1;
+    }
+
+    .notification-popup.success {
+        background-color: #4CAF50;
+        /* Cor para sucesso */
+    }
+
+    .notification-popup.show {
+        right: 20px;
+        /* Popup aparece na tela */
+    }
+
+    .notification-popup.hidden {
+        right: -300px;
+        /* Oculta o popup */
+    }
+
+    /* Barra de contagem regressiva */
+    .countdown-bar {
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        margin-top: 10px;
+        animation: countdown 3s linear;
+    }
+
+    /* Animação de contagem regressiva da barra */
+    @keyframes countdown {
+        from {
+            width: 100%;
+        }
+
+        to {
+            width: 0;
+        }
+    }
+
+    /* Estilo do loader e do spinner */
+    .loader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #49B9ED;
+        font-size: 18px;
+        font-weight: bold;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .loader.show {
+        opacity: 1;
+    }
+
+    .loader.hidden {
+        display: none;
+    }
+
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #49B9ED;
+        /* Cor da borda externa */
+        border-top: 4px solid #fff;
+        /* Cor da borda superior */
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 10px;
+        /* Espaço entre o spinner e o texto */
+    }
+
+    /* Animação de rotação */
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* O modal será ocultado por padrão */
+    .modal2 {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Fundo escuro */
+        overflow: auto;
+    }
+
+    /* Conteúdo do modal */
+    .modal2-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        /* Pode ajustar conforme necessário */
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    /* Fechar o botão (X) */
+    .close {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal2-content button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    .modal2-content button:hover {
+        background-color: #45a049;
+    }
+}

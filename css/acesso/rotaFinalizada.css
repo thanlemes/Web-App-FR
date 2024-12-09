@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #E0E0E0;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (min-width: 270px) {
+    #rota-finalizada {
+        background-color: #2A2F34;
+    }
+
+    .nav-condutor-rota-finalizada {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    .nav-condutor-rota-finalizada h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #81CBEE;
+    }
+
+    .container-dados-veiculos {
+        padding: 0 10%;
+        width: 100%;
+    }
+    
+    .border-container {
+        border: 2px solid #81CBEE;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .dados-veiculos-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .dados-veiculos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 10px;
+        width: 50%;
+        border-bottom: 2px solid #E0E0E0;
+    }
+
+    .dados-veiculos img {
+        width: 50px;
+        height: auto;
+    }
+
+    .dados-veiculos-box .dados-veiculos:first-child {
+        border-right: 2px solid #E0E0E0;
+    }
+
+    .dados-veiculos h1 {
+        font-size: 16px;
+        font-weight: 500;
+        color: #E0E0E0;
+    }
+
+    .dados-veiculos p {
+        font-size: 20px;
+        font-weight: bold;
+        color: #FFF;
+    }
+
+    .dados-veiculos {
+        opacity: 0;
+        /* Inicia invisível */
+        transform: translateY(20px);
+        /* Move para baixo */
+        animation: fadeIn 0.7s forwards;
+        /* Aplica a animação */
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            /* Torna visível */
+            transform: translateY(0);
+            /* Retorna à posição original */
+        }
+    }
+
+    .guias-acesso {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .guias-acesso .gerar-fr {
+        width: 100%;
+    }
+
+    .guias-acesso .gerar-fr button {
+        text-decoration: none;
+        background: none;
+        border: none;
+        width: 100%;
+    }
+    
+    .guias-acesso .gerar-row {
+        background-color: #DC3545;
+        border: 2px solid #89222C;
+        border-radius: 10px;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        min-width: 100%;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 0;
+        color: #FFF;
+    }
+    
+    .guias-acesso a {
+        text-decoration: none;
+        background-color: #05619D;
+        border: 2px solid #1C91D0;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 0;
+        color: #FFF;
+    }
+
+    .guias-acesso .gerar-fr img {
+        height: 20px;
+        width: auto;
+        margin-left: 10px;
+    }
+}

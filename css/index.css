@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+body {
+    position: relative;
+}
+
+@media only screen and (min-width: 270px) {
+
+/* LOGIN */
+
+    form {
+        width: 65%;
+        margin-top: 40%;
+    }
+
+    #home {
+        background-image: url(../img/background_login.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .container-login {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .container-login a {
+        text-decoration: none;
+        color: #49B9ED;
+        font-size: 3.5vw;
+        margin-top: 8px;
+    }
+
+    .container-login h3 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #49B9ED;
+        font-size: 20px;
+    }
+
+    .container-login u {
+        color: #49B9ED;
+        font-size: 3.5vw;
+    }
+
+    .container-login #submit {
+        width: 100%;
+        padding: 8px;
+        border-radius: 10px;
+        font-size: 5vw;
+        background-color: #05619D;
+        border: 2px solid #49B9ED;
+        margin-top: 30px;
+    }
+    
+    .login-info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .login-info:nth-child(2) {
+        margin-top: 20px;
+    }
+
+    .login-info:nth-child(3) {
+        margin-top: 15px;
+    }
+    
+    .login-info label {
+        font-weight: bold;
+        font-size: 5vw;
+        margin-bottom: 10px;
+    }
+    
+    .login-info input {
+        width: 100%;
+        padding: 10px 8px;
+        border-radius: 10px;
+        font-size: 4vw;
+        background-color: rgba(185, 230, 251, 0.3);
+        color: #ffffff;
+        border: 3px solid transparent;
+        transition: border-color 0.3s;
+    }
+    
+    .login-info input::placeholder {
+        color: #ffffff;
+        opacity: 1;
+    }
+    
+    .login-info input:focus {
+        outline: none;
+        border: 3px solid #49B9ED;
+    }
+
+    .password-input {
+        position:  relative;
+        display: flex;
+        align-items: center;
+    }
+    
+    .show-password {
+        position: absolute;
+        top: 31%;
+        transform: translateY(-50%, -50%);
+        width: 35px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        right: 8px;
+    }
+    
+    .visibility-icon {
+        width: 60%;
+        height: auto;
+    }
+    
+    .password-login {
+        position: relative;
+    }
+
+    .password-login img {
+        text-align: end;
+    }
+
+    .notification-popup {
+        position: fixed;
+        top: 20px;
+        right: -300px;
+        width: 300px;
+        padding: 15px;
+        background-color: #ff4f4f;
+        /* Cor para erro */
+        color: white;
+        font-size: 1rem;
+        border-radius: 5px;
+        transition: right 0.5s ease;
+    }
+
+    .notification-popup.success {
+        background-color: #4CAF50;
+        /* Cor para sucesso */
+    }
+
+    .notification-popup.show {
+        right: 20px;
+        /* Popup aparece na tela */
+    }
+
+    .hidden {
+        right: -300px;
+        /* Oculta o popup */
+    }
+
+    .countdown-bar {
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        margin-top: 10px;
+        animation: countdown 3s linear;
+    }
+
+    @keyframes countdown {
+        from {
+            width: 100%;
+        }
+
+        to {
+            width: 0;
+        }
+    }
+
+    .hidden-form {
+        position: fixed;
+        top: -9999px;
+        /* Move o formulário para fora da tela */
+        left: -9999px;
+        /* Move o formulário para fora da tela */
+        visibility: hidden;
+    }
+}
